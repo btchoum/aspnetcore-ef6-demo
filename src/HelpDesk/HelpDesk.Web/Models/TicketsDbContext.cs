@@ -16,6 +16,5 @@ namespace HelpDesk.Web.Models
         {
             base.OnModelCreating(modelBuilder);
         }
-
     }
 }
