@@ -28,6 +28,15 @@ namespace HelpDesk.Tests
             Assert.That(result.PageName, Is.EqualTo("index").IgnoreCase);
         }
 
+
+        [Test]
+        public void OnGet_Works()
+        {
+            var page = CreatePageModel();
+
+            page.OnGet();
+        }
+
         private static CreateModel CreatePageModel()
         {
             var connectionString = "server=(localdb)\\mssqllocaldb;database=AspnetCoreEf6DemoTests;trusted_connection=true;";

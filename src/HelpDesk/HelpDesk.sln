@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDesk.Web", "HelpDesk.Web\HelpDesk.Web.csproj", "{62F438AE-F14C-4526-B6B1-5360D8A3B4A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelpDesk.Web", "HelpDesk.Web\HelpDesk.Web.csproj", "{62F438AE-F14C-4526-B6B1-5360D8A3B4A4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D7706A79-2AC6-4A8A-AB29-CE8D1814BE7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6657F5E1-2FF6-470D-9075-E5150FC261EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpDesk.Tests", "..\..\tests\HelpDesk.Tests\HelpDesk.Tests.csproj", "{5A6711C0-B693-4973-B44F-9F82145DC131}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HelpDesk.Tests", "..\..\tests\HelpDesk.Tests\HelpDesk.Tests.csproj", "{5A6711C0-B693-4973-B44F-9F82145DC131}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
