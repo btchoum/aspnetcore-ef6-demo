@@ -3,7 +3,7 @@ using HelpDesk.Web.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace HelpDesk.Web.Pages
+namespace HelpDesk.Web.Pages.Tickets
 {
     public class CreateModel : PageModel
     {

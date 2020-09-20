@@ -1,9 +1,10 @@
 ﻿using HelpDesk.Web.Models;
 using HelpDesk.Web.Pages;
+using HelpDesk.Web.Pages.Tickets;
 using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 
-namespace HelpDesk.Tests
+namespace HelpDesk.Tests.Tickets
 {
     public class CreateModelTests
     {
