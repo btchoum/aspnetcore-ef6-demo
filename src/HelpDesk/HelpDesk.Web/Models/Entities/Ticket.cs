@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HelpDesk.Web.Models
+namespace HelpDesk.Web.Models.Entities
 {
     public class Ticket
     {

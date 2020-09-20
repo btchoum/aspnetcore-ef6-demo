@@ -1,3 +1,5 @@
+using HelpDesk.Web.Models;
+using HelpDesk.Web.Models.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -37,13 +39,33 @@ namespace HelpDesk.Web.Pages
         public string Title { get; set; }
         public string Details { get; set; }
         public int TotalImpactedUsers { get; set; }
+        public string CreatedBy { get; set; }
     }
 
     public class TicketCreateHandler
     {
+        private readonly TicketsDbContext _context;
+
+        public TicketCreateHandler(TicketsDbContext context)
+        {
+            _context = context;
+        }
+
         public void Handle(TicketCreateModel input)
         {
-            //TODO: Save ticket to database here ...
+            // Create the ticket
+            var ticket = new Ticket
+            {
+                Title = input.Title,
+                Details = input.Details,
+                TotalImpactedUsers = input.TotalImpactedUsers,
+                CreatedBy = input.CreatedBy
+            };
+
+            // Save ticket to database here ...
+            _context.Tickets.Add(ticket);
+            _context.SaveChanges();
+
             //TODO: Send notification(s)...
         }
     }
