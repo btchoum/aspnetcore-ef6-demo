@@ -5,8 +5,9 @@ namespace HelpDesk.Web.Models
 {
     public class TicketsDbContext : DbContext
     {
-        public TicketsDbContext() : base("TicketsDbContext")
+        public TicketsDbContext(string connectionString) : base(connectionString)
         {
+            Database.SetInitializer(new NullDatabaseInitializer<TicketsDbContext>());
         }
 
         public DbSet<Ticket> Tickets { get; set; }
