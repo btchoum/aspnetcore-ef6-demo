@@ -1,0 +1,33 @@
+﻿@page
+@model HelpDesk.Web.Pages.CreateModel
+@{
+}
+
+<h3>Create new Ticket</h3>
+
+
+<form method="post">
+
+    <div class="form-group">
+        <label asp-for="@Model.Input.Title">Title</label>
+        <input type="text" asp-for="@Model.Input.Title" class="form-control" />
+        <span asp-validation-for="@Model.Input.Title" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Input.Details">Details</label>
+        <textarea asp-for="@Model.Input.Details" class="form-control"></textarea>
+        <span asp-validation-for="@Model.Input.Details" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="@Model.Input.TotalImpactedUsers">Total Impacted Users</label>
+        <input type="number" asp-for="@Model.Input.TotalImpactedUsers" class="form-control" />
+        <span asp-validation-for="@Model.Input.TotalImpactedUsers" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit">Submit</button>
+    </div>
+
+</form>
