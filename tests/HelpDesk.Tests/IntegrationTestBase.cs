@@ -8,9 +8,7 @@ namespace HelpDesk.Tests
         [SetUp]
         public void BaseSetup()
         {
-            var context = CreateTestTicketsDbContext();
-            var deleteAllTestData = "DELETE FROM dbo.Tickets";
-            context.Database.ExecuteSqlCommand(deleteAllTestData);
+            DeleteAllTestData();
         }
 
         protected static TicketsDbContext CreateTestTicketsDbContext()
@@ -18,6 +16,22 @@ namespace HelpDesk.Tests
             var connectionString = "server=(localdb)\\mssqllocaldb;database=AspnetCoreEf6DemoTests;trusted_connection=true;";
             var context = new TicketsDbContext(connectionString);
             return context;
+        }
+
+        private static void DeleteAllTestData()
+        {
+            var context = CreateTestTicketsDbContext();
+
+            var sqlStatements = new[]
+            {
+                "DELETE FROM dbo.Tickets",
+                "DBCC CHECKIDENT ('Tickets', RESEED, 0)"
+            };
+
+            foreach (var sql in sqlStatements)
+            {
+                context.Database.ExecuteSqlCommand(sql);
+            }
         }
     }
 }
