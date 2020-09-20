@@ -1,12 +1,10 @@
-﻿using HelpDesk.Web.Models;
-using HelpDesk.Web.Pages;
-using HelpDesk.Web.Pages.Tickets;
+﻿using HelpDesk.Web.Pages.Tickets;
 using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 
 namespace HelpDesk.Tests.Tickets
 {
-    public class CreateModelTests
+    public class CreateModelTests : IntegrationTestBase
     {
         [Test]
         public void OnPost_Works()
@@ -40,8 +38,7 @@ namespace HelpDesk.Tests.Tickets
 
         private static CreateModel CreatePageModel()
         {
-            var connectionString = "server=(localdb)\\mssqllocaldb;database=AspnetCoreEf6DemoTests;trusted_connection=true;";
-            var context = new TicketsDbContext(connectionString);
+            var context = CreateTestTicketsDbContext();
             var page = new CreateModel(new TicketCreateHandler(context));
             return page;
         }
